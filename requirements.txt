@@ -1,0 +1,5 @@
+TensorFlowTTS
+gradio 
+numpy
+SoundFile
+git+https://github.com/repodiac/german_transliterate
