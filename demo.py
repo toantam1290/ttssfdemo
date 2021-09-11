@@ -1,13 +1,14 @@
 import numpy as np
 import soundfile as sf
 import yaml
-import librosa
+
 
 import tensorflow as tf
 
 from tensorflow_tts.inference import TFAutoModel
 from tensorflow_tts.inference import AutoProcessor
 import gradio as gr
+import librosa
 
 # initialize fastspeech2 model.
 fastspeech2 = TFAutoModel.from_pretrained("tensorspeech/tts-fastspeech2-ljspeech-en")
