@@ -1,6 +1,7 @@
 import numpy as np
 import soundfile as sf
 import yaml
+import librosa
 
 import tensorflow as tf
 
@@ -37,8 +38,13 @@ def inference(text):
   
   # save to file
   # sf.write('./audio_before.wav', audio_before, 22050, "PCM_16")
+  #sf.write('./audio_after.wav', audio_after, 22050, format = "WAV", subtype = "FLOAT")
+  #return './audio_after.wav'
   sf.write('./audio_after.wav', audio_after, 22050, format = "WAV", subtype = "FLOAT")
-  return './audio_after.wav'
+  samples, sample_rate = librosa.load('./audio_after.wav', sr = 22050)
+  samples = librosa.resample(samples, sample_rate, 44100)
+  sf.write('./audio_result.wav', samples, 44100, format = "WAV", subtype = "FLOAT")
+  return './audio_result.wav'
   
 inputs = gr.inputs.Textbox(lines=10, label="Input Text")
 outputs =  gr.outputs.Audio(type="file", label="Output Audio")
