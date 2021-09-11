@@ -37,8 +37,8 @@ def inference(text):
   
   # save to file
   # sf.write('./audio_before.wav', audio_before, 22050, "PCM_16")
-  sf.write('./audio_after.flac', audio_after, 22050, format = "FLAC", subtype = "PCM_24")
-  return './audio_after.flac'
+  sf.write('./audio_after.wav', audio_after, 22050, format = "WAV", subtype = "FLOAT")
+  return './audio_after.wav'
   
 inputs = gr.inputs.Textbox(lines=10, label="Input Text")
 outputs =  gr.outputs.Audio(type="file", label="Output Audio")
