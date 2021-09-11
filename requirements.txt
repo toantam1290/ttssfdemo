@@ -2,5 +2,4 @@ TensorFlowTTS
 gradio 
 numpy
 SoundFile
-librosa
 git+https://github.com/repodiac/german_transliterate
