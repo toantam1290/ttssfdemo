@@ -40,7 +40,7 @@ def inference(text):
   sf.write('./audio_after.wav', audio_after, 22050, "FLOAT")
   return './audio_after.wav'
   
-inputs = gr.inputs.Textbox(lines=5, label="Input Text")
+inputs = gr.inputs.Textbox(lines=10, label="Input Text")
 outputs =  gr.outputs.Audio(type="file", label="Output Audio")
 
 
