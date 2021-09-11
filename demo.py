@@ -37,7 +37,7 @@ def inference(text):
   
   # save to file
   sf.write('./audio_before.wav', audio_before, 22050, "PCM_16")
-  sf.write('./audio_after.wav', audio_after, 22050, "PCM_16")
+  sf.write('./audio_after.wav', audio_after, 22050, "FLOAT")
   return './audio_after.wav'
   
 inputs = gr.inputs.Textbox(lines=5, label="Input Text")
